@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Record Types</label>
+    <protected>false</protected>
+    <values>
+        <field>valence__ClassName__c</field>
+        <value xsi:type="xsd:string">RecordTypeFilter</value>
+    </values>
+    <values>
+        <field>valence__Config__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>valence__DefaultSortOrder__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>valence__Default__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>valence__Description__c</field>
+        <value xsi:type="xsd:string">Allows you to populate the RecordTypeId field on records inbound to Salesforce by interpreting a string value in the record's properties.</value>
+    </values>
+    <values>
+        <field>valence__Namespace__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>
