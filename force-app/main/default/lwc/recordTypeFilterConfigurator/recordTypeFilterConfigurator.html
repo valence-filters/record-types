@@ -1,0 +1,49 @@
+<!-- Record Type Filter Configurator -->
+<template>
+
+	<div class="slds-p-right_large">
+
+		<p class="slds-m-vertical_small">Incoming records can be assigned to a Record Type based on their value in the mapping source field this configuration is attached to.</p>
+		<p class="slds-m-vertical_small">The actual configurations are stored using the DeveloperName for each Record Type so that you can move them between orgs without trouble.</p>
+
+		<lightning-card title="Record Type" class="slds-m-vertical_small">
+
+			<lightning-button label="Add Match" onclick={addPair} slot="actions"></lightning-button>
+
+			<lightning-layout multiple-rows="true">
+				<template for:each={configuration.pairs} for:item="pair" for:index="index">
+
+					<lightning-layout-item key={pair.value} size="5" padding="around-small">
+						<lightning-input label="Incoming Value"
+										 data-index={index}
+										 value={pair.value}
+										 onblur={updateIncomingValue}
+										 placeholder="What value matches the Record Type?"></lightning-input>
+					</lightning-layout-item>
+
+					<lightning-layout-item key={pair.value} size="5" padding="around-small">
+						<lightning-combobox label="Record Type"
+											data-index={index}
+											value={pair.recordType}
+											options={recordTypes}
+											placeholder="Which Record Type matches the value?"
+											onblur={updateRecordType}></lightning-combobox>
+					</lightning-layout-item>
+
+					<lightning-layout-item key={pair.value} size="2" padding="around-small">
+						<div class="slds-m-top_large">
+							<lightning-button-icon icon-name="utility:close"
+												   alternative-text="Remove this item"
+												   value={index}
+												   onclick={removePair}></lightning-button-icon>
+						</div>
+					</lightning-layout-item>
+
+				</template>
+			</lightning-layout>
+
+		</lightning-card>
+
+	</div>
+
+</template>

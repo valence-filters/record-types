@@ -105,7 +105,7 @@ global with sharing class RecordTypeFilter implements valence.SchemaAwareTransfo
 	 *
 	 * @return A list of record types associated with a particular object
 	 */
-	@AuraEnabled
+	@AuraEnabled(Cacheable=true)
 	public static List<RecordType> getTypesForObject(String objectName) {
 		return [SELECT Id, DeveloperName, Name FROM RecordType WHERE SobjectType = :objectName];
 	}
