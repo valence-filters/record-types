@@ -2,7 +2,6 @@
  * Allows a user to configure the RecordType filter for Valence.
  */
 
-import {LightningElement} from 'lwc';
 import ValenceUIConfigurator from 'c/valenceUIConfigurator';
 import getTypesForObject from '@salesforce/apex/RecordTypeFilter.getTypesForObject';
 
