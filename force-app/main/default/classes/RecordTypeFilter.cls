@@ -54,7 +54,7 @@ global with sharing class RecordTypeFilter implements valence.SchemaAwareTransfo
 			if(String.isNotBlank(mapping.configuration)) {
 				try {
 					Configuration config = (Configuration)JSON.deserialize(mapping.configuration, Configuration.class);
-					configsBySourcePath.put(mapping.sourcePath, config);
+					configsBySourcePath.put(mapping.sourceFieldPath, config);
 				}
 				catch(Exception e) {
 					throw new valence.FilterException('Cannot parse RecordTypeFilter configuration: ' + mapping.configuration, e);

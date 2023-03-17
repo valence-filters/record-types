@@ -14,7 +14,7 @@ private class RecordTypeFilterTests {
 		valence.LinkContext context = new valence.LinkContext();
 		context.linkTargetName = 'Contact';
 		context.mappings = new Map<String, valence.Mapping>{
-				'firstMapping' => valence.ValenceTestUtil.createTestMapping('firstMapping', valence.FieldPath.buildPath('Industry'), valence.FieldPath.buildPath('Department'), configStr)
+				'firstMapping' => valence.ValenceTestUtil.createTestMapping('firstMapping', 'Industry', 'Department', configStr)
 		};
 
 		List<valence.RecordInFlight> records = new List<valence.RecordInFlight>{
@@ -39,7 +39,7 @@ private class RecordTypeFilterTests {
 		valence.LinkContext context = new valence.LinkContext();
 		context.linkTargetName = 'Contact';
 		context.mappings = new Map<String, valence.Mapping>{
-			'firstMapping' => valence.ValenceTestUtil.createTestMapping('firstMapping', valence.FieldPath.buildPath('Industry'), valence.FieldPath.buildPath('Department'), 'invalid')
+			'firstMapping' => valence.ValenceTestUtil.createTestMapping('firstMapping', 'Industry', 'Department', 'invalid')
 		};
 
 		List<valence.RecordInFlight> records = new List<valence.RecordInFlight>{
@@ -65,7 +65,7 @@ private class RecordTypeFilterTests {
 		valence.LinkContext context = new valence.LinkContext();
 		context.linkTargetName = 'Contact';
 		context.mappings = new Map<String, valence.Mapping>{
-				'firstMapping' => valence.ValenceTestUtil.createTestMapping('firstMapping', valence.FieldPath.buildPath('Industry'), valence.FieldPath.buildPath('Department'), null)
+				'firstMapping' => valence.ValenceTestUtil.createTestMapping('firstMapping', 'Industry', 'Department', null)
 		};
 
 		List<valence.RecordInFlight> records = new List<valence.RecordInFlight>{
