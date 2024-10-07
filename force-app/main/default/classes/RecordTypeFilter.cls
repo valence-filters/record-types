@@ -3,6 +3,8 @@
  */
 global with sharing class RecordTypeFilter implements valence.SchemaAwareTransformationFilter, valence.ConfigurablePerMappingFilter {
 
+	private static final String FIELD_PATH_RECORD_TYPE_ID = 'RecordTypeId';
+
 	// ----------------------------------------
 	// ----- ConfigurablePerMappingFilter -----
 	// ----------------------------------------
@@ -76,7 +78,7 @@ global with sharing class RecordTypeFilter implements valence.SchemaAwareTransfo
 				String value = (String)record.getOriginalProperty(sourcePath);
 				// attempt to set the RecordTypeId using a DeveloperName that was configured to match this field value
 				if(value != null && config != null && config.values != null && recordTypesByDevName.get(config.values.get(value)) != null) {
-					record.setProperty(valence.FieldPath.buildPath('RecordTypeId'), recordTypesByDevName.get(config.values.get(value)));
+					record.setProperty(valence.FieldPath.buildPath(FIELD_PATH_RECORD_TYPE_ID), recordTypesByDevName.get(config.values.get(value)));
 				}
 			}
 		}
@@ -88,9 +90,7 @@ global with sharing class RecordTypeFilter implements valence.SchemaAwareTransfo
 
 	public valence.FilterSchema describeSchema(valence.LinkContext context) {
 		valence.FilterSchema schema = new valence.FilterSchema();
-		schema.addTouch(valence.FilterSchema.buildTargetTouch('WRITE').onField(new List<String>{
-			'RecordTypeId'
-		}));
+		schema.addTouch(valence.FilterSchema.buildTargetTouch('WRITE').onField(FIELD_PATH_RECORD_TYPE_ID));
 		return schema;
 	}
 
